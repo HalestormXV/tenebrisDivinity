@@ -1,0 +1,16 @@
+[
+{
+  "modid": "eangel",
+  "name": "Elementum Angelus",
+  "description": "This adds a dark and a light side of magic to Minecraft. Enter, demons and angels.",
+  "version": "1.0.0",
+  "mcversion": "1.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["HalestormXV"],
+  "credits": "HalestormXV",
+  "logoFile": "eAngelus.png",
+  "screenshots": [],
+  "dependencies": ["mod_MinecraftForge"]
+}
+]
