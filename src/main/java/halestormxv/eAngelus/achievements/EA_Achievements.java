@@ -4,6 +4,7 @@ import halestormxv.eAngelus.main.init.eAngelusBlocks;
 import halestormxv.eAngelus.main.init.eAngelusItems;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class EA_Achievements 
@@ -27,6 +28,7 @@ public class EA_Achievements
 				}
 				));
 		
-		FMLCommonHandler.instance().bus().register(new EA_AchievementsEvents());
+		//FMLCommonHandler.instance().bus().register(new EA_AchievementsEvents());
+		MinecraftForge.EVENT_BUS.register(new EA_AchievementsEvents());
 	}
 }
