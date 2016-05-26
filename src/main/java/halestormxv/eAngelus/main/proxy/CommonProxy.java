@@ -27,5 +27,10 @@ public class CommonProxy
 	{
 		
 	}
+	
+	public void registerModelBakeryStuff()
+	{
+		
+	}
 
 }
