@@ -7,6 +7,13 @@ item.mystalDust.name=Mystal Dust
 item.azuriteStone.name=Azurite Stone
 item.serpentineStone.name=Serpentine Stone
 
+#CARDS
+item.eaCardO.cIgnis.name=ORDER: Ignis
+item.eaCardO.cFortitudo.name=ORDER: Fortitudo
+item.eaCardO.cVentus.name=ORDER: Ventus
+item.eaCardO.cArescet.name=ORDER: Arescet
+item.eaCardO.cLightning.name=ORDER: Lightning
+
 #TOOLS
 item.serpentineHoe.name=Serpentine Hoe
 item.serpentineSpade.name=Serpentine Shovel
