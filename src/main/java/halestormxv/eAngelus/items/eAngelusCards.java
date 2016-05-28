@@ -14,14 +14,19 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class eAngelusCards extends Item
 {
@@ -53,6 +58,16 @@ public class eAngelusCards extends Item
 			items.add(new ItemStack(item, 1, i));
 		}
 	}
+	
+    public int getMaxItemUseDuration(ItemStack stack)
+    {
+        return 72000;
+    }
+
+    public EnumAction getItemUseAction(ItemStack stack)
+    {
+        return EnumAction.BOW;
+    }
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) 
@@ -74,7 +89,7 @@ public class eAngelusCards extends Item
 			try 
 			{
 				Item card = itemCardsClasses[itemstack.getItemDamage()].getConstructor(World.class).newInstance(world);
-				
+
 				//int sF = CardCostFormula[itemstack.getItemDamage()];
 				//int sB = CardCostBase[itemstack.getItemDamage()];
 				//int sC = CardUsageCost = (int)(Math.ceil((player.experienceLevel) / sF));
@@ -101,6 +116,34 @@ public class eAngelusCards extends Item
 		}
 		else if (itemstack.getItemDamage() > O_cardNames.length){};
 		return EnumActionResult.FAIL;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
+	{
+		if (stack.getItemDamage() == 0)
+		{
+			tooltip.add("");
+			tooltip.add("\u00A76" + "You fall into my arms.");
+			tooltip.add("\u00A76" + "You are the good gift of destruction's path.");
+			tooltip.add("\u00A76" + "When life sickens more than disease.");
+			tooltip.add("\u00A76" + "And boldness is the root of beauty...");
+			tooltip.add("");
+			tooltip.add("\u00A7n" + "Calls down a storm of lightning on surrounding enemies.");
+		}
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack stack)
+	{
+		if (stack.getItemDamage() == 0)
+		{
+			return EnumRarity.UNCOMMON;
+		}else{
+			return EnumRarity.COMMON;
+		}
 	}
 
 }

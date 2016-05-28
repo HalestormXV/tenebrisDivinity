@@ -38,43 +38,6 @@ public class O_card_Fire extends Item
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public EnumRarity getRarity(ItemStack stack){
-		return EnumRarity.UNCOMMON;
-	}
-
-	@Override
-	public boolean hasEffect(ItemStack stack){
-		return true;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
-	{
-		tooltip.add("");
-		tooltip.add("\u00A76" + "You fall into my arms.");
-		tooltip.add("\u00A76" + "You are the good gift of destruction's path.");
-		tooltip.add("\u00A76" + "When life sickens more than disease.");
-		tooltip.add("\u00A76" + "And boldness is the root of beauty...");
-		tooltip.add("");
-		tooltip.add("\u00A7n" + "Calls down a storm of lightning on surrounding enemies.");
-	}
-
-	public EnumAction getItemUseAction(ItemStack itemstack)
-	{
-		return EnumAction.BOW;
-	}
-
-	/*@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos,
-			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		// TODO Auto-generated method stub
-		//return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
-	}*/
-
-
-	@Override
 	public void onPlayerStoppedUsing(ItemStack itemstack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
 	{
 		int chargeTime = 0;
